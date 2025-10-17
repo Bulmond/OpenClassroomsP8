@@ -13,6 +13,22 @@
     }
 
     h2 {
-        @apply text-[min(6vw, 28px)] text-accent font-semibold;
+        @apply text-[min(6vw,28px)] font-semibold;
     }
+    section {
+        @apply h-1/2 w-full p-[min(6vw,40px)];
+    }
+}
+
+@layer components {
+    .card-wrapper {
+        @apply grid auto-cols-auto grid-cols-3 gap-8 px-[min(2vw,40px)] md:grid-cols-7;
+    }
+    .card {
+        @apply bg-accent h-auto w-full rounded-md p-2.5;
+    }
+}
+
+@utility flex-center {
+    @apply flex items-center justify-center;
 }
