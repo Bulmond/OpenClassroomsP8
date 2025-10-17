@@ -9,10 +9,10 @@ const Hero = () => {
                 <h1 className="bold md:text text-4xl font-extrabold">
                     Filipe Motta
                 </h1>
-                <h2 className="pt-6 text-2xl font-semibold md:text-3xl">
+                <h2 className="pt-6l">
                     Developpeur Front-End
                 </h2>
-                <p className="pt-6 md:text-2xl">
+                <p className="pt-6">
                     Developpeur Front-End autodidacte, je suis passioné par le
                     développement web et la programmation depuis mes 15 ans
                 </p>

@@ -6,3 +6,13 @@
     --color-background: #f9f5ff;
     --color-accent: #d4c2fc;
 }
+
+@layer base {
+    p {
+        @apply text-[min(4vw,24px)];
+    }
+
+    h2 {
+        @apply text-[min(6vw, 28px)] text-accent font-semibold;
+    }
+}
