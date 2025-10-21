@@ -16,7 +16,7 @@ const Hero = () => {
                 </p>
                 <div className="flex justify-center gap-4 pt-6">
                     <Button className="bg-info">
-                        <span className="">Entrez en Contact</span>
+                        <span>Entrez en Contact</span>
                     </Button>
                     <Button>
                         <Github />
