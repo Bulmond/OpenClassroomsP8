@@ -4,7 +4,7 @@ import { Github } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="bg-background flex flex-col gap-2">
+        <section className="flex flex-col gap-2">
             <div className="flex w-full flex-col lg:w-1/3">
                 <h1 className="text-[min(8vw,36px)] font-extrabold">
                     Filipe Motta
@@ -15,7 +15,7 @@ const Hero = () => {
                     développement web et la programmation depuis mes 15 ans
                 </p>
                 <div className="flex justify-center gap-4 pt-6">
-                    <Button className="bg-accent">
+                    <Button className="bg-info">
                         <span className="">Entrez en Contact</span>
                     </Button>
                     <Button>

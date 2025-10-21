@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
     return (
-        <section className="bg-primary flex-center gap-5 text-white">
+        <section className="flex-center gap-5">
             <img
                 className="hidden aspect-square max-w-1/4 rounded-full object-cover md:inline"
                 src="src/assets/image.jpg"

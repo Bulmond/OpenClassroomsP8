@@ -1,13 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #28262c;
-    --color-secondary: #998fc7;
-    --color-background: #f9f5ff;
-    --color-accent: #d4c2fc;
+    --color-bg-dark: oklch(0.1 0.07 317);
+    --color-bg: oklch(0.15 0.07 317);
+    --color-bg-light: oklch(0.2 0.07 317);
+    --color-text: oklch(0.96 0.1 317);
+    --color-text-muted: oklch(0.76 0.1 317);
+    --color-highlight: oklch(0.5 0.14 317);
+    --color-border: oklch(0.4 0.14 317);
+    --color-border-muted: oklch(0.3 0.14 317);
+    --color-primary: oklch(0.76 0.14 317);
+    --color-secondary: oklch(0.76 0.14 137);
+    --color-danger: oklch(0.7 0.14 30);
+    --color-warning: oklch(0.7 0.14 100);
+    --color-success: oklch(0.7 0.14 160);
+    --color-info: oklch(0.7 0.14 260);
 }
 
 @layer base {
+    :root {
+        @apply text-text;
+    }
     p {
         @apply text-[min(4vw,24px)];
     }
@@ -16,7 +29,16 @@
         @apply text-[min(6vw,28px)] font-semibold;
     }
     section {
-        @apply h-1/2 w-full p-[min(6vw,40px)];
+        @apply bg-bg border-b-highlight h-1/2 w-full rounded-b-md border-b-3 p-[min(6vw,40px)];
+    }
+    body {
+        @apply flex-center bg-bg;
+    }
+    #root {
+        @apply flex-center w-full flex-col;
+    }
+    .main-content {
+        @apply max-w-360;
     }
 }
 
@@ -25,7 +47,10 @@
         @apply grid auto-cols-auto grid-cols-3 gap-8 px-[min(2vw,40px)] md:grid-cols-7;
     }
     .card {
-        @apply bg-accent h-auto w-full rounded-md p-2.5;
+        @apply bg-bg border-border-muted h-auto w-full rounded-md border-3 p-2.5;
+    }
+    .card:hover {
+        @apply bg-bg-light border-highlight;
     }
 }
 

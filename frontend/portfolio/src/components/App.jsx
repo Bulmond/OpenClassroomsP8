@@ -1,5 +1,6 @@
 import About from "./About";
 import Footer from "./Footer";
+import Form from "./Form";
 import Header from "./Header";
 import Hero from "./Hero";
 import Projects from "./Projects";
@@ -9,11 +10,14 @@ function App() {
     return (
         <>
             <Header />
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Footer />
+            <div className="main-content">
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Form />
+                <Footer />
+            </div>
         </>
     );
 }
