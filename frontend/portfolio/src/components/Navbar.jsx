@@ -3,7 +3,9 @@ import { Menu } from "lucide-react";
 const Navbar = () => {
     return (
         <div className="content-center p-3">
-            <Menu color="white" />
+            <button className="bg-bg">
+                <Menu color="white" />
+            </button>
         </div>
     );
 };

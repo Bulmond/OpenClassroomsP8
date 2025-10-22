@@ -1,14 +1,13 @@
 import React from "react";
+import Card from "./Card";
 
-const Projects = () => {
+const Projects = ({ repos }) => {
+    console.log(repos);
     return (
         <section>
             <article>
-                <h2>Mes Projets</h2>
-                <div className="card-wrapper">
-                    <div className="card">OCP3</div>
-                    <div className="card">OCP5</div>
-                </div>
+                <h2 className="pb-6">Mes Projets</h2>
+                {repos && <Card repos={repos} />}
             </article>
         </section>
     );

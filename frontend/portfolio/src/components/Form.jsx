@@ -18,7 +18,9 @@ const Form = () => {
                         placeholder="Que souhaitez-vous dire ?"
                     ></textarea>
                 </div>
-                <button className="place-self-center">Envoyer</button>
+                <button className="flex-center mx-auto w-1/4 gap-2 p-2">
+                    Envoyer
+                </button>
             </form>
         </section>
     );
