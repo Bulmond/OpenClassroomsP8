@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-    --color-bg-dark: oklch(0.1 0.07 317);
-    --color-bg: oklch(0.15 0.07 317);
-    --color-bg-light: oklch(0.2 0.07 317);
-    --color-text: oklch(0.96 0.1 317);
-    --color-text-muted: oklch(0.76 0.1 317);
-    --color-highlight: oklch(0.5 0.14 317);
-    --color-border: oklch(0.4 0.14 317);
-    --color-border-muted: oklch(0.3 0.14 317);
-    --color-primary: oklch(0.76 0.14 317);
-    --color-secondary: oklch(0.76 0.14 137);
-    --color-danger: oklch(0.7 0.14 30);
-    --color-warning: oklch(0.7 0.14 100);
-    --color-success: oklch(0.7 0.14 160);
-    --color-info: oklch(0.7 0.14 260);
+    --color-bg-dark: oklch(0.1 0.02 304);
+    --color-bg: oklch(0.15 0.02 304);
+    --color-bg-light: oklch(0.2 0.02 304);
+    --color-text: oklch(0.96 0.04 304);
+    --color-text-muted: oklch(0.76 0.04 304);
+    --color-highlight: oklch(0.5 0.04 304);
+    --color-border: oklch(0.4 0.04 304);
+    --color-border-muted: oklch(0.3 0.04 304);
+    --color-primary: oklch(0.76 0.1 304);
+    --color-secondary: oklch(0.76 0.1 124);
+    --color-danger: oklch(0.7 0.05 30);
+    --color-warning: oklch(0.7 0.05 100);
+    --color-success: oklch(0.7 0.05 160);
+    --color-info: oklch(0.7 0.05 260);
 }
 
 @layer base {

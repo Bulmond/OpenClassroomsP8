@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import About from "./About";
-import Footer from "./Footer";
-import Form from "./Form";
-import Header from "./Header";
-import Hero from "./Hero";
-import Projects from "./Projects";
-import Skills from "./Skills";
+import About from "./components/About";
+import Footer from "./components/Footer";
+import Form from "./components/Form";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 
 function App() {
     const [repos, setRepos] = useState(null);
