@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 mongoose
     .connect(
-        "mongodb+srv://lfilipemottaa:qX7ZvFw54QWU0rXf@clusterportfolio.rq9u88n.mongodb.net/?appName=ClusterPortfolio"
+        "mongodb+srv://lfilipemottaa:@clusterportfolio.rq9u88n.mongodb.net/?appName=ClusterPortfolio"
     )
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(() => console.log("Connexion à MongoDB échouée !"));
