@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "style.css";
+import "./style.css";
 import Header from "../../frontend/src/components/Header";
 
 function App() {
