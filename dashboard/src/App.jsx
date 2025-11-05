@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./style.css";
-import Header from "../../frontend/src/components/Header";
 
 function App() {
     const [repos, setRepos] = useState(null);
@@ -16,7 +15,7 @@ function App() {
     console.log(repos);
     return (
         <>
-            <Header />
+            <p>Hello world</p>
         </>
     );
 }
