@@ -19,7 +19,7 @@ const Skills = ({ skills, fetchSkills }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("https://portfoliobackend-c34d.onrender.com:10000/api/skills", {
+        fetch("https://portfoliobackend-c34d.onrender.com/api/skills", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -35,12 +35,9 @@ const Skills = ({ skills, fetchSkills }) => {
     };
 
     const handleDelete = (id) => {
-        fetch(
-            `https://portfoliobackend-c34d.onrender.com:10000/api/skills/${id}`,
-            {
-                method: "DELETE",
-            },
-        )
+        fetch(`https://portfoliobackend-c34d.onrender.com/api/skills/${id}`, {
+            method: "DELETE",
+        })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

@@ -23,7 +23,7 @@ const Card = ({ repos, updateProject }) => {
         setSelectedProject(updatedProject);
 
         fetch(
-            `https://portfoliobackend-c34d.onrender.com:10000/api/projects/${selectedProject._id}`,
+            `https://portfoliobackend-c34d.onrender.com/api/projects/${selectedProject._id}`,
             {
                 method: "PATCH",
                 headers: {
