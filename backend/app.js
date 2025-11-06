@@ -15,7 +15,7 @@ const fetchAndSaveProjects = () => {
         .then((response) => {
             const repos = response.data;
             axios.post(
-                "https://portfoliobackend-c34d.onrender.com/api/projects",
+                "https://portfoliobackend-c34d.onrender.com:10000/api/projects",
                 repos
             );
         })
@@ -24,26 +24,8 @@ const fetchAndSaveProjects = () => {
         });
 };
 
-app.use(
-    cors({
-        origin: [
-            "https://www.dashboard.filipe-motta.com/",
-            "https://www.dashboard.filipe-motta.com/projects",
-            "https://www.dashboard.filipe-motta.com/skills",
-        ],
-        methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: [
-            "Content-Type",
-            "Authorization",
-            "Access-Control-Allow-Origin",
-        ],
-    })
-);
-
 mongoose
-    .connect(
-        "mongodb+srv://lfilipemottaa:qX7ZvFw54QWU0rXf@clusterportfolio.rq9u88n.mongodb.net/?appName=ClusterPortfolio"
-    )
+    .connect(MONGO_URI)
     .then(() => {
         console.log("Connexion à MongoDB réussie !");
         fetchAndSaveProjects();
@@ -51,7 +33,10 @@ mongoose
     .catch(() => console.log("Connexion à MongoDB échouée !"));
 app.use(express.json());
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Origin",
+        "https://dashboard.filipe-motta.com/"
+    );
     res.setHeader(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
