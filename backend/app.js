@@ -33,7 +33,9 @@ app.use(
 );
 
 mongoose
-    .connect(MONGO_URI)
+    .connect(
+        "mongodb+srv://lfilipemottaa:qX7ZvFw54QWU0rXf@clusterportfolio.rq9u88n.mongodb.net/?appName=ClusterPortfolio"
+    )
     .then(() => {
         console.log("Connexion à MongoDB réussie !");
         fetchAndSaveProjects();
