@@ -12,20 +12,24 @@ function App() {
     const [skills, setSkills] = useState(null);
 
     const fetchSkills = () => {
-        fetch("http://localhost:3000/api/skills")
+        fetch("https://portfoliobackend-c34d.onrender.com:10000/api/skills")
             .then((res) => res.json())
             .then((data) => setSkills(data));
     };
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/projects")
+        fetch("https://portfoliobackend-c34d.onrender.com:10000/api/projects")
             .then((res) => res.json())
             .then((data) => setRepos(data));
         fetchSkills();
     }, []);
 
     const updateProject = (updatedProject) => {
-        setRepos(repos.map(repo => repo._id === updatedProject._id ? updatedProject : repo));
+        setRepos(
+            repos.map((repo) =>
+                repo._id === updatedProject._id ? updatedProject : repo,
+            ),
+        );
     };
 
     return (
@@ -38,11 +42,21 @@ function App() {
                         <Route path="/" element={<Overview />} />
                         <Route
                             path="/projects"
-                            element={<Projects repos={repos} updateProject={updateProject} />}
+                            element={
+                                <Projects
+                                    repos={repos}
+                                    updateProject={updateProject}
+                                />
+                            }
                         />
                         <Route
                             path="/skills"
-                            element={<Skills skills={skills} fetchSkills={fetchSkills} />}
+                            element={
+                                <Skills
+                                    skills={skills}
+                                    fetchSkills={fetchSkills}
+                                />
+                            }
                         />
                     </Routes>
                 </div>

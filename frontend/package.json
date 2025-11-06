@@ -2,7 +2,7 @@
   "name": "portfolio",
   "homepage": "https://www.filipe-motta.com/",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "proxy": "https://portfoliobackend-c34d.onrender.com:10000",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

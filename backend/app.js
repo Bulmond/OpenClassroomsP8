@@ -14,7 +14,10 @@ const fetchAndSaveProjects = () => {
         .get("https://api.github.com/users/bulmond/repos")
         .then((response) => {
             const repos = response.data;
-            axios.post("http://localhost:3000/api/projects", repos);
+            axios.post(
+                "https://portfoliobackend-c34d.onrender.com:10000/api/projects",
+                repos
+            );
         })
         .catch((error) => {
             console.error("Error fetching GitHub repos:", error);
@@ -23,7 +26,7 @@ const fetchAndSaveProjects = () => {
 
 app.use(
     cors({
-        origin: "http://localhost:5174",
+        origin: "https://www.dashboard.filipe-motta.com/",
         methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })

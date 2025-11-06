@@ -22,13 +22,16 @@ const Card = ({ repos, updateProject }) => {
         };
         setSelectedProject(updatedProject);
 
-        fetch(`http://localhost:3000/api/projects/${selectedProject._id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
+        fetch(
+            `https://portfoliobackend-c34d.onrender.com:10000/api/projects/${selectedProject._id}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ valorized: e.target.checked }),
             },
-            body: JSON.stringify({ valorized: e.target.checked }),
-        })
+        )
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
@@ -47,17 +50,21 @@ const Card = ({ repos, updateProject }) => {
     return (
         <>
             <div className="card-wrapper grid-cols-1 place-content-center md:grid-cols-2">
-                {repos && repos
-                    .sort((a, b) => (b.valorized ? 1 : 0) - (a.valorized ? 1 : 0))
-                    .map((repo) => (
-                        <div
-                            key={repo._id}
-                            className="card project-card"
-                            onClick={() => openModal(repo)}
-                        >
-                            <h3>{repo.name}</h3>
-                        </div>
-                    ))}
+                {repos &&
+                    repos
+                        .sort(
+                            (a, b) =>
+                                (b.valorized ? 1 : 0) - (a.valorized ? 1 : 0),
+                        )
+                        .map((repo) => (
+                            <div
+                                key={repo._id}
+                                className="card project-card"
+                                onClick={() => openModal(repo)}
+                            >
+                                <h3>{repo.name}</h3>
+                            </div>
+                        ))}
             </div>
             <Modal isOpen={modalOpen} onClose={closeModal}>
                 {selectedProject && (
@@ -65,7 +72,13 @@ const Card = ({ repos, updateProject }) => {
                         <h2>{selectedProject.name}</h2>
                         <p>{selectedProject.description}</p>
                         <p>Language: {selectedProject.language}</p>
-                        <a href={selectedProject.html_url} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                        <a
+                            href={selectedProject.html_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View on GitHub
+                        </a>
                         <div className="flex items-center">
                             <input
                                 type="checkbox"
@@ -74,7 +87,9 @@ const Card = ({ repos, updateProject }) => {
                                 checked={selectedProject.valorized || false}
                                 onChange={handleValorizedChange}
                             />
-                            <label htmlFor="valorized" className="ml-2">Valorized</label>
+                            <label htmlFor="valorized" className="ml-2">
+                                Valorized
+                            </label>
                         </div>
                     </div>
                 )}

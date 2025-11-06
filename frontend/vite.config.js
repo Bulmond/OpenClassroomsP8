@@ -8,7 +8,7 @@ export default defineConfig({
     base: "https://www.filipe-motta.com/",
     server: {
         hmr: {
-            host: "localhost",
+            host: "https://portfoliobackend-c34d.onrender.com",
         },
     },
 });
