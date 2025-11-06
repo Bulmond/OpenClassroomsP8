@@ -26,7 +26,11 @@ const fetchAndSaveProjects = () => {
 
 app.use(
     cors({
-        origin: "https://www.dashboard.filipe-motta.com/*",
+        origin: [
+            "https://www.dashboard.filipe-motta.com/",
+            "https://dashboard.filipe-motta.com/projects",
+            "https://dashboard.filipe-motta.com/skills",
+        ],
         methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
