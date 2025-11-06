@@ -32,7 +32,11 @@ app.use(
             "https://www.dashboard.filipe-motta.com/skills",
         ],
         methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
+        allowedHeaders: [
+            "Content-Type",
+            "Authorization",
+            "Access-Control-Allow-Origin",
+        ],
     })
 );
 
