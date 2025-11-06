@@ -27,8 +27,8 @@ function App() {
                 <Skills />
                 <Projects repos={repos} />
                 <Form />
-                <Footer />
             </div>
+            <Footer />
         </>
     );
 }
