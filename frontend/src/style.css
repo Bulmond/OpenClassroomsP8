@@ -43,8 +43,8 @@
     label {
         @apply mr-auto;
     }
-    button {
-        @apply bg-info rounded-md;
+    .button {
+        @apply bg-info rounded-md w-fit px-4 py-2.5 text-white flex items-center gap-2.5;
     }
     #root {
         @apply flex-center w-full flex-col;

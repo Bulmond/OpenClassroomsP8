@@ -10,12 +10,22 @@ import Skills from "./components/Skills";
 function App() {
     const [repos, setRepos] = useState(null);
     useEffect(() => {
-        fetch("https://api.github.com/users/bulmond/repos")
+        fetch("http://localhost:3000/api/projects")
             .then((res) => {
                 return res.json();
             })
             .then((data) => {
                 setRepos(data);
+            });
+    }, []);
+    const [skills, setSkills] = useState(null);
+    useEffect(() => {
+        fetch("http://localhost:3000/api/skills")
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                setSkills(data);
             });
     }, []);
     return (
@@ -24,7 +34,7 @@ function App() {
             <div className="main-content">
                 <Hero />
                 <About />
-                <Skills />
+                <Skills skills={skills} />
                 <Projects repos={repos} />
                 <Form />
             </div>

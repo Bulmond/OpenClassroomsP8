@@ -2,7 +2,6 @@ import React from "react";
 import Card from "./Card";
 
 const Projects = ({ repos }) => {
-    console.log(repos);
     return (
         <section>
             <article>

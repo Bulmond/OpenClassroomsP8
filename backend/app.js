@@ -1,12 +1,40 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+const axios = require("axios");
+MONGO_URI = require("dotenv").config().parsed.MONGO_URI;
+
+const skillsRoutes = require("./routes/skills");
+const projectsRoutes = require("./routes/projects");
 
 const app = express();
+
+const fetchAndSaveProjects = () => {
+    axios
+        .get("https://api.github.com/users/bulmond/repos")
+        .then((response) => {
+            const repos = response.data;
+            axios.post("http://localhost:3000/api/projects", repos);
+        })
+        .catch((error) => {
+            console.error("Error fetching GitHub repos:", error);
+        });
+};
+
+app.use(
+    cors({
+        origin: "http://localhost:5174",
+        methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
+
 mongoose
-    .connect(
-        "mongodb+srv://lfilipemottaa:@clusterportfolio.rq9u88n.mongodb.net/?appName=ClusterPortfolio"
-    )
-    .then(() => console.log("Connexion à MongoDB réussie !"))
+    .connect(MONGO_URI)
+    .then(() => {
+        console.log("Connexion à MongoDB réussie !");
+        fetchAndSaveProjects();
+    })
     .catch(() => console.log("Connexion à MongoDB échouée !"));
 app.use(express.json());
 app.use((req, res, next) => {
@@ -21,5 +49,8 @@ app.use((req, res, next) => {
     );
     next();
 });
+
+app.use("/api/skills", skillsRoutes);
+app.use("/api/projects", projectsRoutes);
 
 module.exports = app;

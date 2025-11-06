@@ -1,27 +1,53 @@
 import "./style.css";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Layout/Header";
-import Footer from "./components/Layout/Footer";
 import Sidebar from "./components/Layout/Sidebar";
 import Projects from "./components/Projects/Projects";
-import Skills from "./components/Skills/Skills";
+import Overview from "./components/Overview";
+import Skills from "./components/Skills";
 
 function App() {
+    const [repos, setRepos] = useState(null);
+    const [skills, setSkills] = useState(null);
+
+    const fetchSkills = () => {
+        fetch("http://localhost:3000/api/skills")
+            .then((res) => res.json())
+            .then((data) => setSkills(data));
+    };
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/projects")
+            .then((res) => res.json())
+            .then((data) => setRepos(data));
+        fetchSkills();
+    }, []);
+
+    const updateProject = (updatedProject) => {
+        setRepos(repos.map(repo => repo._id === updatedProject._id ? updatedProject : repo));
+    };
+
     return (
-        <Router>
-            <div className="flex h-screen">
-                <Sidebar />
-                <div className="flex-1">
-                    <Header />
-                    <main className="p-4">
-                        <Routes>
-                            <Route path="/projects" element={<Projects />} />
-                            <Route path="/skills" element={<Skills />} />
-                        </Routes>
-                    </main>
+        <main className="w-full">
+            <Router>
+                <Header />
+                <div className="flex">
+                    <Sidebar />
+                    <Routes>
+                        <Route path="/" element={<Overview />} />
+                        <Route
+                            path="/projects"
+                            element={<Projects repos={repos} updateProject={updateProject} />}
+                        />
+                        <Route
+                            path="/skills"
+                            element={<Skills skills={skills} fetchSkills={fetchSkills} />}
+                        />
+                    </Routes>
                 </div>
-            </div>
-        </Router>
+            </Router>
+        </main>
     );
 }
 

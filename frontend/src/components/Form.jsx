@@ -1,24 +1,39 @@
 import React from "react";
-import Button from "./Button";
 
 const Form = () => {
     return (
-        <section className="flex-center">
-            <form>
+        <section id="contact" className="flex-center">
+            <form
+                action={"https://formsubmit.co/contact@filipe-motta.com"}
+                method="POST"
+            >
+                <label htmlFor="name">Name</label>
+                <input
+                    className="input-field"
+                    type="text"
+                    name="name"
+                    placeholder="John Doe"
+                    required
+                />
                 <label htmlFor="email">Email</label>
-                <div className="input-field">
-                    <input type="email" id="email" placeholder="john@doe.com" />
-                </div>
+                <input
+                    className="input-field"
+                    type="email"
+                    name="email"
+                    placeholder="john@doe.com"
+                    required
+                />
                 <label htmlFor="message">Message</label>
-                <div className="input-field">
-                    <textarea
-                        className="w-full"
-                        rows={6}
-                        id="message"
-                        placeholder="Que souhaitez-vous dire ?"
-                    ></textarea>
-                </div>
-                <button className="flex-center mx-auto w-1/4 gap-2 p-2">
+                <textarea
+                    className="input-field w-full"
+                    rows={6}
+                    name="message"
+                    placeholder="Que souhaitez-vous dire ?"
+                ></textarea>
+                <button
+                    type="submit"
+                    className="button flex-center mx-auto w-1/4 gap-2 p-2"
+                >
                     Envoyer
                 </button>
             </form>

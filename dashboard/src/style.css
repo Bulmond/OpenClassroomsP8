@@ -3,7 +3,8 @@
 @theme {
     --color-bg-dark: oklch(0.1 0.02 304);
     --color-bg: oklch(0.15 0.02 304);
-    --color-bg-light: oklch(0.2 0.02 304);
+    --color-bg-light: oklch(20.029% 0.0187 304.951);
+    --color-modal: oklch(0.2 0.02 304 / 0.8);
     --color-text: oklch(0.96 0.04 304);
     --color-text-muted: oklch(0.76 0.04 304);
     --color-highlight: oklch(0.5 0.04 304);
@@ -32,7 +33,7 @@
         @apply text-[min(5vw,18px)] font-semibold;
     }
     section {
-        @apply bg-bg border-b-highlight h-1/2 w-full rounded-b-md border-b-3 p-[min(6vw,40px)];
+        @apply bg-bg border-b-highlight h-1/2 w-full rounded-b-md p-[min(6vw,40px)];
     }
     body {
         @apply flex-center bg-bg;
@@ -56,13 +57,13 @@
 
 @layer components {
     .card-wrapper {
-        @apply grid auto-cols-auto grid-cols-3 gap-8 px-[min(2vw,40px)] md:grid-cols-7;
+        @apply grid auto-cols-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-8 px-[min(2vw,40px)];
     }
     .card {
-        @apply bg-bg border-border-muted h-auto w-full rounded-md border-3 p-2.5;
+        @apply bg-bg-light border-border-muted h-auto w-full rounded-md border-3 p-2.5 relative;
     }
     .card:hover {
-        @apply bg-bg-light border-highlight;
+        @apply bg-highlight border-highlight;
     }
     .input-field {
         @apply border-border-muted w-full rounded-md border-2 p-2.5;
@@ -77,5 +78,34 @@
 }
 
 @utility project-card {
-    @apply flex h-[min(40vw,240px)] w-full items-end justify-center;
+    @apply flex h-[min(4vw,60px)] w-full items-end justify-center;
+}
+
+.skill-card .delete-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .delete-icon {
+    opacity: 1;
+}
+
+.project-modal {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-modal h2 {
+    margin-bottom: 10px;
+}
+
+.project-modal a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.project-modal a:hover {
+    text-decoration: underline;
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./Button";
 import { Github } from "lucide-react";
 
 const Hero = () => {
@@ -15,13 +14,13 @@ const Hero = () => {
                     développement web et la programmation depuis mes 15 ans
                 </p>
                 <div className="flex justify-center gap-4 pt-6">
-                    <Button className="bg-info">
+                    <a href="#contact" className="button">
                         <span>Entrez en Contact</span>
-                    </Button>
-                    <Button>
+                    </a>
+                    <a href="https://github.com/Bulmond" className="button">
                         <Github />
                         <span>Github</span>
-                    </Button>
+                    </a>
                 </div>
             </div>
         </section>
