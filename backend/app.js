@@ -28,8 +28,8 @@ app.use(
     cors({
         origin: [
             "https://www.dashboard.filipe-motta.com/",
-            "https://dashboard.filipe-motta.com/projects",
-            "https://dashboard.filipe-motta.com/skills",
+            "https://www.dashboard.filipe-motta.com/projects",
+            "https://www.dashboard.filipe-motta.com/skills",
         ],
         methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
