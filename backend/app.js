@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const axios = require("axios");
+const cors = require("cors");
 MONGO_URI = require("dotenv").config().parsed.MONGO_URI;
 
 const skillsRoutes = require("./routes/skills");
