@@ -31,7 +31,7 @@ app.use(
             "https://dashboard.filipe-motta.com/projects",
             "https://dashboard.filipe-motta.com/skills",
         ],
-        methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+        methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
