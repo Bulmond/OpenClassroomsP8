@@ -13,7 +13,10 @@ const fetchAndSaveProjects = () => {
         .get("https://api.github.com/users/bulmond/repos")
         .then((response) => {
             const repos = response.data;
-            axios.post("http://localhost:3000/api/projects", repos);
+            axios.post(
+                "https://portfoliobackend-c34d.onrender.com/apis/projects",
+                repos
+            );
         })
         .catch((error) => {
             console.error("Error fetching GitHub repos:", error);
