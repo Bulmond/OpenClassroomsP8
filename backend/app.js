@@ -2,14 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const axios = require("axios");
 const cors = require("cors");
-const history = require("connect-history-api-fallback");
 MONGO_URI = process.env.MONGO_URI;
 
 const skillsRoutes = require("./routes/skills");
 const projectsRoutes = require("./routes/projects");
 
 const app = express();
-app.use(history());
 
 const fetchAndSaveProjects = () => {
     axios
