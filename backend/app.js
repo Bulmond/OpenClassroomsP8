@@ -15,7 +15,7 @@ const fetchAndSaveProjects = () => {
         .then((response) => {
             const repos = response.data;
             axios.post(
-                "https://portfoliobackend-c34d.onrender.com/apis/projects",
+                "https://portfoliobackend-c34d.onrender.com/api/projects",
                 repos
             );
         })
