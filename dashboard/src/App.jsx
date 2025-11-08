@@ -12,13 +12,13 @@ function App() {
     const [skills, setSkills] = useState(null);
 
     const fetchSkills = () => {
-        fetch("https://portfoliobackend-c34d.onrender.com/api/skills")
+        fetch("http://localhost:10000/api/skills")
             .then((res) => res.json())
             .then((data) => setSkills(data));
     };
 
     useEffect(() => {
-        fetch("https://portfoliobackend-c34d.onrender.com/api/projects")
+        fetch("http://localhost:10000/api/projects")
             .then((res) => res.json())
             .then((data) => setRepos(data));
         fetchSkills();

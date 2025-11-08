@@ -10,7 +10,7 @@ import Skills from "./components/Skills";
 function App() {
     const [repos, setRepos] = useState(null);
     useEffect(() => {
-        fetch("https://portfoliobackend-c34d.onrender.com/api/projects")
+        fetch("http://localhost:10000/api/projects")
             .then((res) => {
                 return res.json();
             })
@@ -19,14 +19,23 @@ function App() {
             });
     }, []);
     const [skills, setSkills] = useState(null);
-    useEffect(() => {
-        fetch("https://portfoliobackend-c34d.onrender.com/api/skills")
+    function getSkills() {
+        fetch("http://localhost:10000/api/skills")
             .then((res) => {
                 return res.json();
             })
             .then((data) => {
                 setSkills(data);
             });
+    }
+    useEffect(() => {
+        getSkills();
+        const interval = setInterval(() => {
+            getSkills();
+        }, 3000);
+        return () => {
+            clearInterval(interval);
+        };
     }, []);
     return (
         <>

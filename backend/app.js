@@ -2,10 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const axios = require("axios");
 const cors = require("cors");
-MONGO_URI = process.env.MONGO_URI;
+MONGO_URI = require("dotenv").configDotenv().parsed.MONGO_URI;
 
 const skillsRoutes = require("./routes/skills");
 const projectsRoutes = require("./routes/projects");
+const { configDotenv } = require("dotenv");
 
 const app = express();
 
@@ -14,10 +15,7 @@ const fetchAndSaveProjects = () => {
         .get("https://api.github.com/users/bulmond/repos")
         .then((response) => {
             const repos = response.data;
-            axios.post(
-                "https://portfoliobackend-c34d.onrender.com/api/projects",
-                repos
-            );
+            axios.post("http://localhost:10000/api/projects", repos);
         })
         .catch((error) => {
             console.error("Error fetching GitHub repos:", error);
@@ -26,7 +24,7 @@ const fetchAndSaveProjects = () => {
 
 app.use(
     cors({
-        origin: "https://dashboard.filipe-motta.com",
+        origin: "http://localhost:5173",
         methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })

@@ -22,16 +22,13 @@ const Card = ({ repos, updateProject }) => {
         };
         setSelectedProject(updatedProject);
 
-        fetch(
-            `https://portfoliobackend-c34d.onrender.com/api/projects/${selectedProject._id}`,
-            {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ valorized: e.target.checked }),
+        fetch(`http://localhost:10000/api/projects/${selectedProject._id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
             },
-        )
+            body: JSON.stringify({ valorized: e.target.checked }),
+        })
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
