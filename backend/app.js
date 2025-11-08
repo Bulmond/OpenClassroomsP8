@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const axios = require("axios");
 const cors = require("cors");
+MONGO_URI = process.env.MONGO_URI;
 
 const skillsRoutes = require("./routes/skills");
 const projectsRoutes = require("./routes/projects");
@@ -32,9 +33,7 @@ app.use(
 );
 
 mongoose
-    .connect(
-        "mongodb+srv://lfilipemottaa:qX7ZvFw54QWU0rXf@clusterportfolio.rq9u88n.mongodb.net/?appName=ClusterPortfolio"
-    )
+    .connect(MONGO_URI)
     .then(() => {
         console.log("Connexion à MongoDB réussie !");
         fetchAndSaveProjects();
