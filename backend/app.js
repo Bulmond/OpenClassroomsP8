@@ -9,6 +9,7 @@ const skillsRoutes = require("./routes/skills");
 const projectsRoutes = require("./routes/projects");
 
 const app = express();
+app.use(history());
 
 const fetchAndSaveProjects = () => {
     axios
@@ -53,7 +54,7 @@ app.use((req, res, next) => {
     );
     next();
 });
-app.use(history());
+
 app.use("/api/skills", skillsRoutes);
 app.use("/api/projects", projectsRoutes);
 
