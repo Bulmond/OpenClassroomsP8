@@ -5,7 +5,7 @@ const About = () => {
         <section className="flex-center gap-5">
             <img
                 className="hidden aspect-square max-w-1/4 rounded-full object-cover md:inline"
-                src="src/assets/image.jpg"
+                src="public/image.jpg"
                 alt="avatar"
             />
             <div className="flex flex-col gap-6 md:ml-16 md:w-1/2">
