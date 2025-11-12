@@ -6,7 +6,7 @@ MONGO_URI = require("dotenv").configDotenv().parsed.MONGO_URI;
 
 const skillsRoutes = require("./routes/skills");
 const projectsRoutes = require("./routes/projects");
-const { configDotenv } = require("dotenv");
+const userRoutes = require("./routes/user");
 
 const app = express();
 
@@ -53,5 +53,6 @@ app.use((req, res, next) => {
 
 app.use("/api/skills", skillsRoutes);
 app.use("/api/projects", projectsRoutes);
+app.use("/api/auth", userRoutes);
 
 module.exports = app;

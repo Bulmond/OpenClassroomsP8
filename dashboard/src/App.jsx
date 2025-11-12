@@ -6,6 +6,7 @@ import Sidebar from "./components/Layout/Sidebar";
 import Projects from "./components/Projects/Projects";
 import Overview from "./components/Overview";
 import Skills from "./components/Skills";
+import Auth from "./components/Auth";
 
 function App() {
     const [repos, setRepos] = useState(null);
@@ -58,6 +59,7 @@ function App() {
                                 />
                             }
                         />
+                        <Route path="/login" element={<Auth />} />
                     </Routes>
                 </div>
             </Router>
