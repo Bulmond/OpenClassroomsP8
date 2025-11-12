@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ setAuth }) => {
+    const navigate = useNavigate();
+    const disconnect = () => {
+        localStorage.clear();
+        setAuth(null);
+        navigate("/login");
+    };
     return (
         <div className="w-64 h-screen bg-bg border-r-2 border-border text-white p-4">
             <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
@@ -22,7 +29,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:text-highlight">
+                    <a onClick={disconnect} className="hover:text-highlight">
                         Logout
                     </a>
                 </li>

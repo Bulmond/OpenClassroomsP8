@@ -7,10 +7,19 @@ import Projects from "./components/Projects/Projects";
 import Overview from "./components/Overview";
 import Skills from "./components/Skills";
 import Auth from "./components/Auth";
+import { useAuth } from "./hooks/useAuth";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 function App() {
     const [repos, setRepos] = useState(null);
     const [skills, setSkills] = useState(null);
+    const [auth, setAuth] = useState(null);
+
+    const { connectedUser } = useAuth();
+
+    useEffect(() => {
+        setAuth(connectedUser);
+    }, [connectedUser]);
 
     const fetchSkills = () => {
         fetch("http://localhost:10000/api/skills")
@@ -38,28 +47,33 @@ function App() {
             <Router>
                 <Header />
                 <div className="flex">
-                    <Sidebar />
+                    {auth ? <Sidebar setAuth={setAuth} /> : null}
                     <Routes>
-                        <Route path="/" element={<Overview />} />
                         <Route
-                            path="/projects"
-                            element={
-                                <Projects
-                                    repos={repos}
-                                    updateProject={updateProject}
-                                />
-                            }
+                            path="/login"
+                            element={<Auth setAuth={setAuth} />}
                         />
-                        <Route
-                            path="/skills"
-                            element={
-                                <Skills
-                                    skills={skills}
-                                    fetchSkills={fetchSkills}
-                                />
-                            }
-                        />
-                        <Route path="/login" element={<Auth />} />
+                        <Route element={<ProtectedRoutes auth={auth} />}>
+                            <Route path="/" element={<Overview />} />
+                            <Route
+                                path="/projects"
+                                element={
+                                    <Projects
+                                        repos={repos}
+                                        updateProject={updateProject}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/skills"
+                                element={
+                                    <Skills
+                                        skills={skills}
+                                        fetchSkills={fetchSkills}
+                                    />
+                                }
+                            />
+                        </Route>
                     </Routes>
                 </div>
             </Router>
