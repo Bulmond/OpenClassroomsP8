@@ -10,7 +10,7 @@ import Skills from "./components/Skills";
 function App() {
     const [repos, setRepos] = useState(null);
     useEffect(() => {
-        fetch("http://localhost:10000/api/projects")
+        fetch("https://portfoliobackend-c34d.onrender.com/api/projects")
             .then((res) => {
                 return res.json();
             })
@@ -20,7 +20,7 @@ function App() {
     }, []);
     const [skills, setSkills] = useState(null);
     function getSkills() {
-        fetch("http://localhost:10000/api/skills")
+        fetch("https://portfoliobackend-c34d.onrender.com/api/skills")
             .then((res) => {
                 return res.json();
             })

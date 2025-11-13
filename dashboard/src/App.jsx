@@ -22,13 +22,13 @@ function App() {
     }, [connectedUser]);
 
     const fetchSkills = () => {
-        fetch("http://localhost:10000/api/skills")
+        fetch("https://portfoliobackend-c34d.onrender.com/api/skills")
             .then((res) => res.json())
             .then((data) => setSkills(data));
     };
 
     useEffect(() => {
-        fetch("http://localhost:10000/api/projects")
+        fetch("https://portfoliobackend-c34d.onrender.com/api/projects")
             .then((res) => res.json())
             .then((data) => setRepos(data));
         fetchSkills();
