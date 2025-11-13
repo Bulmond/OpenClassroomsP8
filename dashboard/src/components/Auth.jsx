@@ -17,7 +17,7 @@ const Auth = ({ setAuth }) => {
         try {
             const response = await axios({
                 method: "post",
-                url: "http://localhost:10000/api/auth/login",
+                url: "https://portfoliobackend-c34d.onrender.com/api/auth/login",
                 data: {
                     username,
                     password,
