@@ -19,7 +19,7 @@ function App() {
             });
     }, []);
     const [skills, setSkills] = useState(null);
-    useEffect(() => {
+    function getSkills() {
         fetch("https://portfoliobackend-c34d.onrender.com/api/skills")
             .then((res) => {
                 return res.json();
@@ -27,6 +27,15 @@ function App() {
             .then((data) => {
                 setSkills(data);
             });
+    }
+    useEffect(() => {
+        getSkills();
+        const interval = setInterval(() => {
+            getSkills();
+        }, 3000);
+        return () => {
+            clearInterval(interval);
+        };
     }, []);
     return (
         <>
