@@ -53,8 +53,8 @@ function App() {
                             path="/login"
                             element={<Auth setAuth={setAuth} />}
                         />
+                        <Route path="/" element={<Overview />} />
                         <Route element={<ProtectedRoutes auth={auth} />}>
-                            <Route path="/" element={<Overview />} />
                             <Route
                                 path="/projects"
                                 element={
