@@ -34,7 +34,7 @@ function App() {
             <div className="main-content">
                 <Hero />
                 <About />
-                <Skills skills={skills} />
+                <Skills skills={getSkills} />
                 <Projects repos={repos} />
                 <Form />
             </div>
