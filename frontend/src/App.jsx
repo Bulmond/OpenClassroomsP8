@@ -28,13 +28,16 @@ function App() {
                 setSkills(data);
             });
     }
+    useEffect(() => {
+        getSkills();
+    }, []);
     return (
         <>
             <Header />
             <div className="main-content">
                 <Hero />
                 <About />
-                <Skills skills={getSkills} />
+                <Skills skills={skills} />
                 <Projects repos={repos} />
                 <Form />
             </div>
