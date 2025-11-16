@@ -12,6 +12,7 @@ const Form = () => {
                     className="input-field"
                     type="text"
                     name="name"
+                    id="name"
                     placeholder="John Doe"
                     required
                 />
@@ -20,6 +21,7 @@ const Form = () => {
                     className="input-field"
                     type="email"
                     name="email"
+                    id="email"
                     placeholder="john@doe.com"
                     required
                 />
@@ -28,6 +30,7 @@ const Form = () => {
                     className="input-field w-full"
                     rows={6}
                     name="message"
+                    id="message"
                     placeholder="Que souhaitez-vous dire ?"
                 ></textarea>
                 <button
