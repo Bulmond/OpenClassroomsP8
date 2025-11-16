@@ -28,15 +28,6 @@ function App() {
                 setSkills(data);
             });
     }
-    useEffect(() => {
-        getSkills();
-        const interval = setInterval(() => {
-            getSkills();
-        }, 3000);
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
     return (
         <>
             <Header />
