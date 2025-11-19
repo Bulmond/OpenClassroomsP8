@@ -4,7 +4,9 @@ const Form = () => {
     return (
         <section id="contact" className="flex-center">
             <form
-                action={"https://formsubmit.co/contact@filipe-motta.com"}
+                action={
+                    "https://formsubmit.co/ce43bf302b76ae58bf16357216c08494"
+                }
                 method="POST"
             >
                 <label htmlFor="name">Name</label>
