@@ -13,8 +13,7 @@ const Navbar = () => {
                 <Menu color="white" />
             </button>
             <Modal isOpen={isOpen} onClose={closeModal}>
-                <h2 className="text-2xl mb-4">Menu</h2>
-                <ul className="space-y-2">
+                <ul className="space-y-2 flex flex-col gap-4 text-lg">
                     <li>
                         <a href="#" className="hover:text-highlight">
                             Home

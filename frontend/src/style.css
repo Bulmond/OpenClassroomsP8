@@ -87,3 +87,80 @@
 @utility bottom-border-highlight {
     @apply border-b-highlight border-b-3 rounded-b-md;
 }
+
+@utility modal-open {
+    @apply flex -translate-x-full;
+}
+
+@utility modal-close {
+    @apply hidden translate-x-full;
+}
+
+/* Modal animations */
+:root {
+    --modal-animation-duration: 300ms;
+}
+
+.modal-content {
+    will-change: transform, opacity;
+}
+
+.modal-enter .modal-content {
+    animation: slide-in var(--modal-animation-duration) ease-out forwards;
+}
+
+.modal-exit .modal-content {
+    animation: slide-out var(--modal-animation-duration) ease-in forwards;
+}
+
+.modal-backdrop {
+    will-change: opacity;
+}
+
+.modal-enter > .modal-backdrop {
+    animation: fade-in var(--modal-animation-duration) ease-out forwards;
+}
+
+.modal-exit > .modal-backdrop {
+    animation: fade-out var(--modal-animation-duration) ease-in forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
