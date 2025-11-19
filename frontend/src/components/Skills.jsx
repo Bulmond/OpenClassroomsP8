@@ -2,7 +2,7 @@ import React from "react";
 
 const Skills = ({ skills }) => {
     return (
-        <section>
+        <section id="skills">
             <article>
                 <h2 className="pb-6">Mes Compétences</h2>
                 <div className="card-wrapper">

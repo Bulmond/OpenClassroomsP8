@@ -28,7 +28,7 @@ const Projects = ({ repos }) => {
         : [];
 
     return (
-        <section>
+        <section id="projects">
             <article>
                 <h2 className="pb-6">Mes Projets</h2>
                 <div className="mb-4 flex gap-2 justify-center">

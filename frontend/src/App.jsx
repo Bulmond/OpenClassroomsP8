@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import About from "./components/About";
-import Footer from "./components/Footer";
+import About from "./components/Layout/About";
+import Footer from "./components/Layout/Footer";
 import Form from "./components/Form";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Header from "./components/Layout/Header";
+import Hero from "./components/Layout/Hero";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 
