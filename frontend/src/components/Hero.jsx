@@ -8,10 +8,11 @@ const Hero = () => {
                 <h1 className="text-[min(8vw,36px)] font-extrabold">
                     Filipe Motta
                 </h1>
-                <h2 className="pt-6l">Developpeur Front-End</h2>
+                <h2 className="pt-6l">Développeur Web</h2>
                 <p className="pt-6">
-                    Developpeur Front-End autodidacte, je suis passioné par le
-                    développement web et la programmation depuis mes 15 ans
+                    Développeur Web autodidacte, je suis passioné par le
+                    développement front-end et la programmation depuis mes 15
+                    ans
                 </p>
                 <div className="flex justify-center gap-4 pt-6">
                     <a href="#contact" className="button">

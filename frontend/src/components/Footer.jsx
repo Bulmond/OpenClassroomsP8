@@ -3,7 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
     return (
-        <footer className="bg-bg flex-center h-32 flex-col">
+        <footer className="flex-center h-32 flex-col">
             <div className="social-media">
                 <a href="https://github.com/Bulmond">
                     <Github />

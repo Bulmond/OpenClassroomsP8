@@ -32,10 +32,10 @@
         @apply text-[min(5vw,18px)] font-semibold;
     }
     section {
-        @apply bg-bg border-b-highlight h-1/2 w-full rounded-b-md border-b-3 p-[min(6vw,40px)];
+        @apply bottom-border-highlight h-1/2 w-full p-[min(6vw,40px)];
     }
     body {
-        @apply flex-center bg-bg;
+        @apply flex-center linearGradient-180 min-h-screen p-5;
     }
     form {
         @apply flex-center w-full flex-col gap-2.5 lg:w-1/2;
@@ -78,4 +78,12 @@
 
 @utility project-card {
     @apply flex h-[min(40vw,240px)] w-full items-end justify-center;
+}
+
+@utility linearGradient-180 {
+    @apply bg-gradient-to-br from-bg-dark via-bg to-bg-light;
+}
+
+@utility bottom-border-highlight {
+    @apply border-b-highlight border-b-3 rounded-b-md;
 }

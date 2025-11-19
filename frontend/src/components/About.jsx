@@ -14,7 +14,8 @@ const About = () => {
                     Je suis passionné par la cybersécurité et l'informatique.
                     Aujourd'hui je suis en formation de développeur web. je
                     possède une affinité pour React et Tailwind qui ont rendu le
-                    développement web très satisfaisant pour moi
+                    développement front-end très satisfaisant pour moi et à ce
+                    jour je m'approfondis sur le back-end.
                 </p>
             </div>
         </section>

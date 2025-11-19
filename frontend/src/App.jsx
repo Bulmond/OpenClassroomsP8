@@ -33,8 +33,8 @@ function App() {
     }, []);
     return (
         <>
-            <Header />
             <div className="main-content">
+                <Header />
                 <Hero />
                 <About />
                 <Skills skills={skills} />
