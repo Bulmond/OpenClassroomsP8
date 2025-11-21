@@ -10,11 +10,9 @@ const Dashboard = ({ repos, skills, updateProject, setAuth, fetchSkills }) => {
             <Header />
             <div className="flex">
                 <Sidebar setAuth={setAuth} />
-                <div className="flex-1 p-6">
-                    <Overview repos={repos} />
-                    <Projects repos={repos} updateProject={updateProject} />
-                    <Skills skills={skills} fetchSkills={fetchSkills} />
-                </div>
+                <Overview repos={repos} />
+                <Projects repos={repos} updateProject={updateProject} />
+                <Skills skills={skills} fetchSkills={fetchSkills} />
             </div>
         </>
     );
