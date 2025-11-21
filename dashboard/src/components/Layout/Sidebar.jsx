@@ -34,7 +34,6 @@ const Sidebar = ({ setAuth }) => {
                     </a>
                 </li>
             </ul>
-            <Outlet />
         </div>
     );
 };
