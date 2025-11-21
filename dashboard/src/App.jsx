@@ -14,11 +14,11 @@ function App() {
     const [skills, setSkills] = useState(null);
     const [auth, setAuth] = useState(null);
 
-    const { connectedUser } = useAuth();
+    const { isAuth } = useAuth();
 
     useEffect(() => {
-        setAuth(connectedUser);
-    }, [connectedUser]);
+        setAuth(isAuth);
+    }, [isAuth]);
 
     const fetchSkills = () => {
         fetch("https://portfoliobackend-c34d.onrender.com/api/skills")
