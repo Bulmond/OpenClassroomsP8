@@ -77,7 +77,35 @@
 }
 
 @utility project-card {
-    @apply flex h-[min(40vw,240px)] w-full items-end justify-center border-3 border-border-muted hover:border-highlight rounded-md;
+    @apply project-card-dims project-card-border project-card-display project-card-pos;
+}
+
+@utility project-card-pos {
+    @apply relative overflow-hidden;
+}
+
+@utility project-card-dims {
+    @apply h-[min(40vw,240px)] w-full;
+}
+
+@utility project-card-display {
+    @apply flex justify-end flex-col items-end;
+}
+
+@utility project-card-border {
+    @apply border-3 border-border-muted hover:border-highlight rounded-md;
+}
+
+@utility project-card-title {
+    @apply flex z-1 absolute text-white text-shadow-md self-center mb-2;
+}
+
+@utility project-image {
+    @apply -z-1 relative object-cover w-full h-56 md:h-64;
+}
+
+@utility image-wrapper {
+    @apply w-full h-full bg-linear-180 from-white/1 to-black/90;
 }
 
 @utility linearGradient-180 {
@@ -94,10 +122,6 @@
 
 @utility modal-close {
     @apply hidden translate-x-full;
-}
-
-@utility card-background {
-    @apply bg-linear-to-b from-white-500 to-black-500;
 }
 
 /* Modal animations */
