@@ -9,6 +9,7 @@ const projectSchema = mongoose.Schema({
     forks_count: { type: Number },
     language: { type: String },
     valorized: { type: Boolean, default: 0 },
+    img: { type: String },
 });
 
 module.exports = mongoose.model("Project", projectSchema);
