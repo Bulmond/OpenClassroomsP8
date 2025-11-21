@@ -47,45 +47,38 @@ function App() {
             <Router>
                 <Header />
                 <div className="flex">
-                    {auth ? null : null}
-                    <Sidebar setAuth={setAuth} />
+                    {auth ? <Sidebar setAuth={setAuth} /> : null}
                     <Routes>
                         <Route
                             path="/login"
                             element={<Auth setAuth={setAuth} />}
                         />
-<<<<<<< Updated upstream
-                        <Route path="/" element={<Overview />} />
                         <Route element={<ProtectedRoutes auth={auth} />}>
-=======
-                        {repos && (
->>>>>>> Stashed changes
+                            {repos && (
+                                <Route
+                                    path="/"
+                                    element={<Overview repos={repos} />}
+                                />
+                            )}
                             <Route
-                                path="/"
-                                element={<Overview repos={repos} />}
+                                path="/projects"
+                                element={
+                                    <Projects
+                                        repos={repos}
+                                        updateProject={updateProject}
+                                    />
+                                }
                             />
-                        )}
-                        <Route
-                            path="/projects"
-                            element={
-                                <Projects
-                                    repos={repos}
-                                    updateProject={updateProject}
-                                />
-                            }
-                        />
-                        <Route
-                            path="/skills"
-                            element={
-                                <Skills
-                                    skills={skills}
-                                    fetchSkills={fetchSkills}
-                                />
-                            }
-                        />
-                        <Route
-                            element={<ProtectedRoutes auth={auth} />}
-                        ></Route>
+                            <Route
+                                path="/skills"
+                                element={
+                                    <Skills
+                                        skills={skills}
+                                        fetchSkills={fetchSkills}
+                                    />
+                                }
+                            />
+                        </Route>
                     </Routes>
                 </div>
             </Router>

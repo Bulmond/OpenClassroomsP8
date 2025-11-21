@@ -80,6 +80,9 @@
 @utility project-card {
     @apply flex h-[min(4vw,60px)] w-full items-end justify-center;
 }
+@utility linearGradient-180 {
+    @apply bg-linear-to-br from-bg-dark via-bg to-bg-light;
+}
 
 .skill-card .delete-icon {
     opacity: 0;
@@ -108,8 +111,4 @@
 
 .project-modal a:hover {
     text-decoration: underline;
-}
-
-@utility linearGradient-180 {
-    @apply bg-linear-to-br from-bg-dark via-bg to-bg-light;
 }
