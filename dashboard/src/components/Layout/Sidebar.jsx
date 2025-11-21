@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ setAuth }) => {
@@ -34,6 +34,7 @@ const Sidebar = ({ setAuth }) => {
                     </a>
                 </li>
             </ul>
+            <Outlet />
         </div>
     );
 };

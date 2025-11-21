@@ -52,32 +52,33 @@ function App() {
                             path="/login"
                             element={<Auth setAuth={setAuth} />}
                         />
-                        <Route element={<Sidebar setAuth={setAuth} />} />
-                        <Route element={<ProtectedRoutes auth={auth} />}>
-                            {repos && (
+                        <Route element={<Sidebar setAuth={setAuth} />}>
+                            <Route element={<ProtectedRoutes auth={auth} />}>
+                                {repos && (
+                                    <Route
+                                        path="/"
+                                        element={<Overview repos={repos} />}
+                                    />
+                                )}
                                 <Route
-                                    path="/"
-                                    element={<Overview repos={repos} />}
+                                    path="/projects"
+                                    element={
+                                        <Projects
+                                            repos={repos}
+                                            updateProject={updateProject}
+                                        />
+                                    }
                                 />
-                            )}
-                            <Route
-                                path="/projects"
-                                element={
-                                    <Projects
-                                        repos={repos}
-                                        updateProject={updateProject}
-                                    />
-                                }
-                            />
-                            <Route
-                                path="/skills"
-                                element={
-                                    <Skills
-                                        skills={skills}
-                                        fetchSkills={fetchSkills}
-                                    />
-                                }
-                            />
+                                <Route
+                                    path="/skills"
+                                    element={
+                                        <Skills
+                                            skills={skills}
+                                            fetchSkills={fetchSkills}
+                                        />
+                                    }
+                                />
+                            </Route>
                         </Route>
                     </Routes>
                 </div>
