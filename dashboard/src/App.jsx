@@ -46,10 +46,10 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/login" element={<Auth setAuth={setAuth} />} />
-                    <Route path="/" element={<ProtectedRoutes auth={auth} />}>
+                    <Route element={<ProtectedRoutes auth={auth} />}>
                         <Route element={<Dashboard setAuth={setAuth} />}>
                             <Route
-                                path="/overview"
+                                path="/"
                                 element={<Overview repos={repos} />}
                             />
                             <Route

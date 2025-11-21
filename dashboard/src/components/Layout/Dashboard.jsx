@@ -8,9 +8,7 @@ const Dashboard = ({ setAuth }) => {
         <>
             <Header />
             <Sidebar setAuth={setAuth} />
-            <div className="flex">
-                <Outlet />
-            </div>
+            <Outlet />
         </>
     );
 };
