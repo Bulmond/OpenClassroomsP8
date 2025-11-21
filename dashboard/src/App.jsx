@@ -47,12 +47,12 @@ function App() {
             <Router>
                 <Header />
                 <div className="flex">
-                    {auth ? <Sidebar setAuth={setAuth} /> : null}
                     <Routes>
                         <Route
                             path="/login"
                             element={<Auth setAuth={setAuth} />}
                         />
+                        <Route element={<Sidebar setAuth={setAuth} />} />
                         <Route element={<ProtectedRoutes auth={auth} />}>
                             {repos && (
                                 <Route

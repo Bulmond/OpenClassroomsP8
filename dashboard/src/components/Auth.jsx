@@ -26,9 +26,6 @@ const Auth = ({ setAuth }) => {
             if (response.data) {
                 localStorage.setItem("token", response.data.token);
                 setAuth(user);
-                setTimeout(() => {
-                    window.location.reload();
-                }, 500);
                 navigate("/");
             }
         } catch (error) {
