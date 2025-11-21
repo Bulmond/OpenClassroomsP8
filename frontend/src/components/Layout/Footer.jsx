@@ -5,10 +5,16 @@ const Footer = () => {
     return (
         <footer className="flex-center h-32 flex-col">
             <div className="social-media">
-                <a href="https://github.com/Bulmond">
+                <a
+                    href="https://github.com/Bulmond"
+                    aria-label="My Github page"
+                >
                     <Github />
                 </a>
-                <a href="https://linkedin.com/in/luiz-filipe-motta-alves-7aa49b345">
+                <a
+                    href="https://linkedin.com/in/luiz-filipe-motta-alves-7aa49b345"
+                    aria-label="My LinkedIn account"
+                >
                     <Linkedin />
                 </a>
             </div>

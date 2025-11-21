@@ -9,7 +9,11 @@ const Navbar = () => {
     const closeModal = () => setIsOpen(false);
     return (
         <div className="content-center p-3">
-            <button onClick={openModal} className="bg-bg">
+            <button
+                onClick={openModal}
+                className="bg-bg"
+                aria-label="Navigation Menu"
+            >
                 <Menu color="white" />
             </button>
             <Modal isOpen={isOpen} onClose={closeModal}>
