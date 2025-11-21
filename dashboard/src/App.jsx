@@ -2,6 +2,9 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Layout/Dashboard";
+import Overview from "./components/Overview";
+import Projects from "./components/Projects/Projects.jsx";
+import Skills from "./components/Skills";
 import Auth from "./components/Auth";
 import { useAuth } from "./hooks/useAuth";
 import ProtectedRoutes from "./components/ProtectedRoutes";
@@ -46,17 +49,34 @@ function App() {
                     <Route
                         path="/"
                         element={
-                            <ProtectedRoutes auth={auth}>
-                                <Dashboard
-                                    repos={repos}
-                                    skills={skills}
-                                    updateProject={updateProject}
-                                    fetchSkills={fetchSkills}
-                                    setAuth={setAuth}
-                                />
-                            </ProtectedRoutes>
+                            <ProtectedRoutes auth={auth}></ProtectedRoutes>
                         }
-                    />
+                    >
+                        <Route element={<Dashboard setAuth={setAuth} />}>
+                            <Route
+                                path="/overview"
+                                element={<Overview repos={repos} />}
+                            />
+                            <Route
+                                path="/projects"
+                                element={
+                                    <Projects
+                                        repos={repos}
+                                        updateProject={updateProject}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/skills"
+                                element={
+                                    <Skills
+                                        skills={skills}
+                                        fetchSkills={fetchSkills}
+                                    />
+                                }
+                            />
+                        </Route>
+                    </Route>
                 </Routes>
             </Router>
         </main>
