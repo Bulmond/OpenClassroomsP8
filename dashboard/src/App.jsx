@@ -1,11 +1,7 @@
 import "./style.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Layout/Header";
-import Sidebar from "./components/Layout/Sidebar";
-import Projects from "./components/Projects/Projects";
-import Overview from "./components/Overview";
-import Skills from "./components/Skills";
+import Dashboard from "./components/Layout/Dashboard";
 import Auth from "./components/Auth";
 import { useAuth } from "./hooks/useAuth";
 import ProtectedRoutes from "./components/ProtectedRoutes";
@@ -45,43 +41,23 @@ function App() {
     return (
         <main className="w-full">
             <Router>
-                <Header />
-                <div className="flex">
-                    <Routes>
-                        <Route
-                            path="/login"
-                            element={<Auth setAuth={setAuth} />}
-                        />
-                        <Route element={<Sidebar setAuth={setAuth} />}>
-                            <Route element={<ProtectedRoutes auth={auth} />}>
-                                {repos && (
-                                    <Route
-                                        path="/"
-                                        element={<Overview repos={repos} />}
-                                    />
-                                )}
-                                <Route
-                                    path="/projects"
-                                    element={
-                                        <Projects
-                                            repos={repos}
-                                            updateProject={updateProject}
-                                        />
-                                    }
+                <Routes>
+                    <Route path="/login" element={<Auth setAuth={setAuth} />} />
+                    <Route
+                        path="/"
+                        element={
+                            <ProtectedRoutes auth={auth}>
+                                <Dashboard
+                                    repos={repos}
+                                    skills={skills}
+                                    updateProject={updateProject}
+                                    fetchSkills={fetchSkills}
+                                    setAuth={setAuth}
                                 />
-                                <Route
-                                    path="/skills"
-                                    element={
-                                        <Skills
-                                            skills={skills}
-                                            fetchSkills={fetchSkills}
-                                        />
-                                    }
-                                />
-                            </Route>
-                        </Route>
-                    </Routes>
-                </div>
+                            </ProtectedRoutes>
+                        }
+                    />
+                </Routes>
             </Router>
         </main>
     );
