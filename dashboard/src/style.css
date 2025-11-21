@@ -36,7 +36,7 @@
         @apply bg-bg border-b-highlight h-1/2 w-full rounded-b-md p-[min(6vw,40px)];
     }
     body {
-        @apply flex-center bg-bg;
+        @apply flex-center linearGradient-180;
     }
     form {
         @apply flex-center w-full flex-col gap-2.5 lg:w-1/2;
@@ -108,4 +108,8 @@
 
 .project-modal a:hover {
     text-decoration: underline;
+}
+
+@utility linearGradient-180 {
+    @apply bg-linear-to-br from-bg-dark via-bg to-bg-light;
 }
