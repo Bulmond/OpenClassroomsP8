@@ -6,7 +6,7 @@ Thank you for the clarification. I will update the README to reflect that the pr
 
 This repository houses the complete codebase for **Project 8 (P8)** of the OpenClassrooms Web Developer training program. The project's goal was to design and implement a personal **Portfolio** application using a robust, multi-service architecture, demonstrating proficiency in full-stack development.
 
-The application is structured to separate the public interface, the administrative tools, and the data handling API, utilizing **React & Tailwind for the front and Express & MongoDB for the backend** for all core components.
+The application is structured to separate the public interface, the administrative tools, and the data handling API, utilizing **React & Tailwind for the front and Express & MongoDB for the backend**
 
 ### Tech Stack & Structure
 
