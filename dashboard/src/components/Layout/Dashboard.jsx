@@ -1,8 +1,9 @@
-import Header from "./components/Layout/Header";
-import Sidebar from "./components/Layout/Sidebar";
-import Projects from "./components/Projects/Projects";
-import Overview from "./components/Overview";
-import Skills from "./components/Skills";
+import React from "react";
+import Header from "../Header";
+import Sidebar from "./Sidebar";
+import Overview from "../Overview";
+import Projects from "../Projects/Projects";
+import Skills from "../Skills";
 
 const Dashboard = ({ repos, skills, updateProject, setAuth, fetchSkills }) => {
     return (
