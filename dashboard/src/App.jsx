@@ -46,32 +46,22 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/login" element={<Auth setAuth={setAuth} />} />
-                    <Route element={<ProtectedRoutes auth={auth} />}>
-                        <Route element={<Dashboard setAuth={setAuth} />}>
-                            <Route
-                                path="/"
-                                element={<Overview repos={repos} />}
+                    <Route path="/" element={<Overview repos={repos} />} />
+                    <Route
+                        path="/projects"
+                        element={
+                            <Projects
+                                repos={repos}
+                                updateProject={updateProject}
                             />
-                            <Route
-                                path="/projects"
-                                element={
-                                    <Projects
-                                        repos={repos}
-                                        updateProject={updateProject}
-                                    />
-                                }
-                            />
-                            <Route
-                                path="/skills"
-                                element={
-                                    <Skills
-                                        skills={skills}
-                                        fetchSkills={fetchSkills}
-                                    />
-                                }
-                            />
-                        </Route>
-                    </Route>
+                        }
+                    />
+                    <Route
+                        path="/skills"
+                        element={
+                            <Skills skills={skills} fetchSkills={fetchSkills} />
+                        }
+                    />
                 </Routes>
             </Router>
         </main>
